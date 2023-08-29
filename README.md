@@ -1,8 +1,11 @@
 # Spider Updates For Unreal Engine 5
 
 To do : Upgrade in collider spawn spider navpoints
+
 To do : Optimize building spider nav grid
+
 To do : Redesign for dynamic pattern working flow
+
 
 # Spider Navigation Plugin For Unreal Engine 4
 
