@@ -179,7 +179,7 @@ public:
 
     /** Draws debug lines between connected navigation points */
 	UFUNCTION(BlueprintCallable, Category = "SpiderNavGridBuilder")
-	void DrawDebugRelations();
+	void DrawDebugRelations(float DrawDuration = -1.0f);
 
     /** Saves navigation grid to save file */
 	UFUNCTION(BlueprintCallable, Category = "SpiderNavGridBuilder")

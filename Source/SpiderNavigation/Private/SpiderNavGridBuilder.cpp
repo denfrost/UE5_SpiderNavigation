@@ -129,6 +129,7 @@ void ASpiderNavGridBuilder::SpawnTracers()
 	//Create a Spawn Parameters struct
 	FActorSpawnParameters SpawnParams;
 	SpawnParams.bNoFail = false;
+	//SpawnParams.bNoFail = false;
 	SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::DontSpawnIfColliding;
 	FRotator DefaultRotator = FRotator(0.0f, 0.0f, 0.0f);
 	
@@ -327,8 +328,8 @@ void ASpiderNavGridBuilder::AddNavPointByHitResult(FHitResult RV_Hit)
 void ASpiderNavGridBuilder::SpawnNavPoints()
 {
 	FActorSpawnParameters SpawnParams;
-	//SpawnParams.bNoFail = true;
-	SpawnParams.bNoFail = false;
+	SpawnParams.bNoFail = true;
+	//SpawnParams.bNoFail = false;
 	SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::DontSpawnIfColliding;
 
 	FRotator DefaultRotator = FRotator(0.0f, 0.0f, 0.0f);
@@ -388,7 +389,7 @@ void ASpiderNavGridBuilder::BuildRelations()
 	}
 }
 
-void ASpiderNavGridBuilder::DrawDebugRelations()
+void ASpiderNavGridBuilder::DrawDebugRelations(float DrawDuration)
 {
 	ASpiderNavPoint* NavPoint = NULL;
 	ASpiderNavPoint* NeighborNavPoint = NULL;
@@ -398,7 +399,7 @@ void ASpiderNavGridBuilder::DrawDebugRelations()
 
 		FColor DrawColor = FLinearColor(0.0f, 1.0f, 0.0f, 1.0f).ToFColor(true);
 		FColor DrawColorNormal = FLinearColor(0.0f, 1.0f, 1.0f, 1.0f).ToFColor(true);
-		float DrawDuration = 10.0f;
+		//float DrawDuration = 10.0f;
 		bool DrawShadow = false;
 		//DrawDebugString(GEngine->GetWorldFromContextObject(this), NavPoint->GetActorLocation(), *FString::Printf(TEXT("[%d] - [%d]"), NavPoint->Neighbors.Num(), NavPoint->PossibleEdgeNeighbors.Num()), NULL, DrawColor, DrawDuration, DrawShadow);
 
